@@ -17,9 +17,24 @@ class Matrix {
   size_t cols_;
   size_t rows_;
 
-  std::vector<Type> data_;
+  // map from 2D to 1D
+  // this is where the contents of each element will live
+  std::vector<T> data_;
+
   std::tuple<size_t, size_t> shape_;
+
+  // number of elements
   int numel_ = rows_ * cols_;
 
  public:
+  // Constructors
+
+  // default
+  Matrix() : cols_{0}, rows_{0}, data_{{}} {
+    shape_ = { rows_, cols_ };
+  }
+
+  Matrix(size_t rows, size_t cols) : rows_{rows}, cols_{cols}, data_{{}} {
+    data_.resize(rows_ * cols_, T());
+  }
 };
