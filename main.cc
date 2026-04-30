@@ -2,7 +2,7 @@
 #include "matrix.h"
 
 int main() {
-    
+    Matrix<int> m(2,3);
     return 0;
 }
 
