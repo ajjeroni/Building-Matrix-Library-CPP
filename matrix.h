@@ -26,7 +26,8 @@ class Matrix {
   // number of elements
   size_t numel_ = rows_ * cols_;
  public:
-  // Constructors
+
+  /*---------------- Constructors -------------*/ 
 
   // default
   Matrix() : cols_{0}, rows_{0}, data_{{}} { 
@@ -34,9 +35,13 @@ class Matrix {
     numel_ = 0; 
   }
 
+  // non-default with 2 parameters
   Matrix(size_t rows, size_t cols) : rows_{rows}, cols_{cols}, data_{{}} {
     data_.resize(rows_ * cols_, T());
     shape_ = {rows_, cols_};
     numel_ = rows_ * cols_;
   }
+
+  /*------------------- Print Methods --------------------*/
+  
 };
