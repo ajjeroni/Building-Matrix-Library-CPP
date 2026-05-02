@@ -43,5 +43,8 @@ class Matrix {
   }
 
   /*------------------- Print Methods --------------------*/
-  
+   void PrintShape() const;
+   void PrintMatrix() const;
 };
+
+#include "matrix.tpp"
