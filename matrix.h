@@ -45,6 +45,13 @@ class Matrix {
     numel_ = rows_ * cols_;
   }
 
+  /* Operator Overloaders */
+  // best practice to use return by reference? 
+  const T& operator()(size_t row, size_t col) {
+
+    return data_[cols_ * row + col];
+  }
+
   /*------------------- Print Methods --------------------*/
    void PrintShape() const;
    void PrintMatrix() const;
