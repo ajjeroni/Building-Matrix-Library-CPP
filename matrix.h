@@ -1,5 +1,6 @@
 #pragma once
 
+#include <cassert>
 #include <iostream>
 #include <tuple>
 #include <vector>
@@ -48,7 +49,7 @@ class Matrix {
   /* Operator Overloaders */
   // best practice to use return by reference? 
   const T& operator()(size_t row, size_t col) {
-
+    assert(row < rows_ && col < cols_);
     return data_[cols_ * row + col];
   }
 
