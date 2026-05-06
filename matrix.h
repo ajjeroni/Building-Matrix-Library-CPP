@@ -48,10 +48,15 @@ class Matrix {
 
   /* Operator Overloaders */
   // best practice to use return by reference? 
-  const T& operator()(size_t row, size_t col) {
+  const T& operator()(size_t row, size_t col) const {
+    // assert works during runtime - checks for illogical situations 
     assert(row < rows_ && col < cols_);
+    // matrix in cpp programming is 0-indexed
     return data_[cols_ * row + col];
   }
+  /* TODO */
+  // Same operator overload for "()", but a non-const version
+  // in case I want to use it to change an element 
 
   /*------------------- Print Methods --------------------*/
    void PrintShape() const;

@@ -8,8 +8,7 @@ int main() {
     std::cout << std::endl;
     std::cout << m(1,0);
     std::cout << std::endl;
-    std::cout << m(2,0);
-    std::cout << std::endl;
+    m.PrintMatrix();
     return 0;
 }
 
