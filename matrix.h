@@ -29,14 +29,14 @@ class Matrix {
 
   // number of elements
   size_t numel_ = rows_ * cols_;
- public:
 
-  /*---------------- Constructors -------------*/ 
+ public:
+  /*---------------- Constructors -------------*/
 
   // default
-  Matrix() : cols_{0}, rows_{0}, data_{{}} { 
+  Matrix() : cols_{0}, rows_{0}, data_{{}} {
     shape_ = {rows_, cols_};
-    numel_ = 0; 
+    numel_ = 0;
   }
 
   // non-default with 2 parameters
@@ -47,20 +47,29 @@ class Matrix {
   }
 
   /* Operator Overloaders */
-  // best practice to use return by reference? 
+  // best practice to use return by reference?
   const T& operator()(size_t row, size_t col) const {
-    // assert works during runtime - checks for illogical situations 
+    // assert works during runtime - checks for illogical situations
     assert(row < rows_ && col < cols_);
     // matrix in cpp programming is 0-indexed
     return data_[cols_ * row + col];
   }
+
   /* TODO */
   // Same operator overload for "()", but a non-const version
-  // in case I want to use it to change an element 
+  // in case I want to use it to change an element
+  T& operator()(size_t row, size_t col) {
+    // assert works during runtime - checks for illogical situations
+    assert(row < rows_ && col < cols_);
+    // matrix in cpp programming is 0-indexed
+    return data_[cols_ * row + col];
+  }
+
+  // I also have to include the "=" operator or do I?
 
   /*------------------- Print Methods --------------------*/
-   void PrintShape() const;
-   void PrintMatrix() const;
+  void PrintShape() const;
+  void PrintMatrix() const;
 };
 
 #include "matrix.tpp"

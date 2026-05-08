@@ -9,6 +9,8 @@ int main() {
     std::cout << m(1,0);
     std::cout << std::endl;
     m.PrintMatrix();
+    m(0,0) = 5;
+    m.PrintMatrix();
     return 0;
 }
 
