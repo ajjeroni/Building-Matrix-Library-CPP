@@ -55,7 +55,6 @@ class Matrix {
     return data_[cols_ * row + col];
   }
 
-  /* TODO */
   // Same operator overload for "()", but a non-const version
   // in case I want to use it to change an element
   T& operator()(size_t row, size_t col) {
@@ -65,11 +64,13 @@ class Matrix {
     return data_[cols_ * row + col];
   }
 
-  // I also have to include the "=" operator or do I?
-
   /*------------------- Print Methods --------------------*/
   void PrintShape() const;
   void PrintMatrix() const;
+
+  /*------------ Basic Linear Algebra Methods ------------*/
+  // our first matrix multiplication method
+  
 };
 
 #include "matrix.tpp"
