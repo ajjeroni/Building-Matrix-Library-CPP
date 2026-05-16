@@ -28,7 +28,16 @@ Matrix<T> Matrix<T>::MatrixMultiplication(const Matrix& other) {
     
     // 3 loop implementation 
     // O(n^3) time complexity
-
+    for (size_t r = 0; r < Product.rows_; ++r) {
+        // This - rows
+        for (size_t c = 0; c < Product.cols_; ++c) {
+            // Other - cols
+            for (size_t i = 0; i < (*this).cols_; ++i) {
+                // This - cols or Other - rows
+                Product(r, c) += (*this)(r, i) * other(i, c); 
+            }
+        }
+    }
 
     return Product;
   }
