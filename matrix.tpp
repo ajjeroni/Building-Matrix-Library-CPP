@@ -21,4 +21,14 @@ void Matrix<T>::PrintMatrix() const {
     std::cout << std::endl;
 }
 
+template <typename T>
+Matrix<T> Matrix<T>::MatrixMultiplication(const Matrix& other) {
+    assert((*this).cols_ == other.rows_);
+    Matrix Product((*this).rows_, other.cols_);
+    
+    // 3 loop implementation 
+    // O(n^3) time complexity
 
+
+    return Product;
+  }

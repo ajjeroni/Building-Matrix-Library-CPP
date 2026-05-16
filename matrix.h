@@ -70,14 +70,7 @@ class Matrix {
 
   /*------------ Basic Linear Algebra Methods ------------*/
   // our first matrix multiplication method
-  Matrix MatrixMultiplication(const Matrix& other) {
-    assert((*this).cols_ == other.rows_);
-    Matrix Product((*this).rows_, other.cols_);
-    
-    // 3 loop implementation 
-    // also i should move this implementation into the implementation file 
-    // O(n^3) time complexity
-  }
+  Matrix MatrixMultiplication(const Matrix& other);
 };
 
 #include "matrix.tpp"
