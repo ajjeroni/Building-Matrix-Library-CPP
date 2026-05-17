@@ -71,6 +71,11 @@ class Matrix {
   /*------------ Basic Linear Algebra Methods ------------*/
   // our first matrix multiplication method
   Matrix MatrixMultiplication(const Matrix& other);
+
+  // Hadamard Product Method
+  // no geometric interpretation, its what would one expect when multiplying
+  // matrices at first
+  Matrix ElementWiseMultiplication(const Matrix& other);
 };
 
 #include "matrix.tpp"
