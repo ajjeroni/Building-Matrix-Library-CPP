@@ -44,4 +44,6 @@ Matrix<T> Matrix<T>::MatrixMultiplication(const Matrix& other) {
 template <typename T>
 Matrix<T> Matrix<T>::ElementWiseMultiplication(const Matrix& other) {
   assert((*this).shape_ == other.shape_);
+  Matrix Product((*this));
+  return Product;
 }
