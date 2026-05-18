@@ -54,3 +54,9 @@ Matrix<T> Matrix<T>::ElementWiseMultiplication(const Matrix& other) {
 
   return Product;
 }
+
+template <typename T>
+Matrix<T> Matrix<T>::SquareElements() {
+  Matrix Product((*this));
+  return (*this).ElementWiseMultiplication(Product);
+}

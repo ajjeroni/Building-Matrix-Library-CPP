@@ -76,6 +76,7 @@ class Matrix {
   // no geometric interpretation, its what would one expect when multiplying
   // matrices at first
   Matrix ElementWiseMultiplication(const Matrix& other);
+  Matrix SquareElements();
 };
 
 #include "matrix.tpp"
