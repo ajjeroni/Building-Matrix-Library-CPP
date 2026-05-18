@@ -45,5 +45,12 @@ template <typename T>
 Matrix<T> Matrix<T>::ElementWiseMultiplication(const Matrix& other) {
   assert((*this).shape_ == other.shape_);
   Matrix Product((*this));
+
+  for (size_t r = 0; r < Product.rows_; ++r) {
+    for (size_t c = 0; c < Product.cols_; ++c) {
+      Product(r, c) = (*this)(r, c) * other(r, c);
+    }
+  }
+
   return Product;
 }
