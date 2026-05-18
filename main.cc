@@ -18,5 +18,6 @@ int main() {
   m.MatrixMultiplication(I).PrintMatrix();
   m.ElementWiseMultiplication(I).PrintMatrix();
   m.SquareElements().PrintMatrix();
+  m.ScalarMultiplication(5).PrintMatrix();
   return 0;
 }

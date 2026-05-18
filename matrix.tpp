@@ -60,3 +60,15 @@ Matrix<T> Matrix<T>::SquareElements() {
   Matrix Product((*this));
   return (*this).ElementWiseMultiplication(Product);
 }
+
+template <typename T>
+Matrix<T> Matrix<T>::ScalarMultiplication(T scalar) {
+  Matrix Product((*this));
+
+  for (size_t r = 0; r < Product.rows_; ++r) {
+    for (size_t c = 0; c < Product.cols_; ++c) {
+      Product(r, c) = scalar * (*this)(r, c);
+    }
+  }
+  return Product;
+}
