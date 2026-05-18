@@ -18,6 +18,9 @@ int main() {
   m.MatrixMultiplication(I).PrintMatrix();
   m.ElementWiseMultiplication(I).PrintMatrix();
   m.SquareElements().PrintMatrix();
+  
   m.ScalarMultiplication(5).PrintMatrix();
+  std::cout << m(0,0) << std::endl;
+  
   return 0;
 }
