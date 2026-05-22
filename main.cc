@@ -20,6 +20,8 @@ int main() {
   m.SquareElements().PrintMatrix();
   m.ScalarMultiplication(5).PrintMatrix();
   m.MatrixAddition(I).PrintMatrix();
+  Matrix<int> B = m + I;
+  B.PrintMatrix();
   std::cout << m(0, 0) << std::endl;
 
   return 0;

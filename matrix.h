@@ -64,6 +64,10 @@ class Matrix {
     return data_[cols_ * row + col];
   }
 
+  Matrix operator+(const Matrix& target) {
+    return (*this).MatrixAddition(target);
+  }
+
   /*------------------- Print Methods --------------------*/
   void PrintShape() const;
   void PrintMatrix() const;
