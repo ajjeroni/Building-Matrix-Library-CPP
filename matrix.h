@@ -78,6 +78,7 @@ class Matrix {
   Matrix ElementWiseMultiplication(const Matrix& other);
   Matrix SquareElements();
   Matrix ScalarMultiplication(T scalar);
+  Matrix MatrixAddition(const Matrix& other);
 };
 
 #include "matrix.tpp"

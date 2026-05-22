@@ -72,3 +72,15 @@ Matrix<T> Matrix<T>::ScalarMultiplication(T scalar) {
   }
   return Product;
 }
+
+template <typename T>
+Matrix<T> Matrix<T>::MatrixAddition(const Matrix& other) {
+  assert(shape_ == other.shape_);
+  Matrix Sum((*this));
+  for (size_t r = 0; r < Sum.rows_; ++r) {
+    for (size_t c = 0; c < Sum.cols_; ++c) {
+      Sum(r, c) += other(r, c);
+    }
+  }
+  return Sum;
+}
