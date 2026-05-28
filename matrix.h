@@ -68,6 +68,9 @@ class Matrix {
     return (*this).MatrixAddition(target);
   }
 
+  // unary-arg matrix negation => matrix = -matrix
+  Matrix operator-() const;
+
   /*------------------- Print Methods --------------------*/
   void PrintShape() const;
   void PrintMatrix() const;
@@ -83,6 +86,7 @@ class Matrix {
   Matrix SquareElements();
   Matrix ScalarMultiplication(T scalar);
   Matrix MatrixAddition(const Matrix& other);
+  Matrix MatrixSubtraction(const Matrix& other);
 };
 
 #include "matrix.tpp"

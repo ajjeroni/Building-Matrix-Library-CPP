@@ -4,6 +4,19 @@
 
 #include "matrix.h"
 
+/*------------------- Operator Overloaders --------------------*/
+template <typename T>
+Matrix<T> Matrix<T>::operator-() const {
+  Matrix Negated((*this));
+  for (size_t r = 0; r < Negated.rows_; ++r) {
+    for (size_t c = 0; c < Negated.cols_; ++c) {
+      Negated(r,c) = -Negated(r,c);
+    }
+  }
+  return Negated;
+}
+
+/*------------------- Print Methods --------------------*/
 template <typename T>
 void Matrix<T>::PrintShape() const {
   std::cout << "Matrix Size([" << rows_ << ", " << cols_ << "])";
@@ -21,6 +34,8 @@ void Matrix<T>::PrintMatrix() const {
   std::cout << std::endl;
 }
 
+
+/*------------ Basic Linear Algebra Methods ------------*/
 template <typename T>
 Matrix<T> Matrix<T>::MatrixMultiplication(const Matrix& other) {
   assert((*this).cols_ == other.rows_);
@@ -84,3 +99,4 @@ Matrix<T> Matrix<T>::MatrixAddition(const Matrix& other) {
   }
   return Sum;
 }
+

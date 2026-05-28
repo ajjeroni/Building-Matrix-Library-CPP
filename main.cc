@@ -23,6 +23,7 @@ int main() {
   Matrix<int> B = m + I;
   B.PrintMatrix();
   std::cout << m(0, 0) << std::endl;
-
+  Matrix<int> NegB = -B;
+  NegB.PrintMatrix();
   return 0;
 }
