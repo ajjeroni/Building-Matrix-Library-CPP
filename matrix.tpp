@@ -37,7 +37,7 @@ void Matrix<T>::PrintMatrix() const {
 
 /*------------ Basic Linear Algebra Methods ------------*/
 template <typename T>
-Matrix<T> Matrix<T>::MatrixMultiplication(const Matrix& other) {
+Matrix<T> Matrix<T>::MatrixMultiplication(const Matrix& other) const {
   assert((*this).cols_ == other.rows_);
   Matrix Product((*this).rows_, other.cols_);
 
@@ -57,7 +57,7 @@ Matrix<T> Matrix<T>::MatrixMultiplication(const Matrix& other) {
 }
 
 template <typename T>
-Matrix<T> Matrix<T>::ElementWiseMultiplication(const Matrix& other) {
+Matrix<T> Matrix<T>::ElementWiseMultiplication(const Matrix& other) const {
   assert((*this).shape_ == other.shape_);
   Matrix Product((*this));
 
@@ -71,13 +71,13 @@ Matrix<T> Matrix<T>::ElementWiseMultiplication(const Matrix& other) {
 }
 
 template <typename T>
-Matrix<T> Matrix<T>::SquareElements() {
+Matrix<T> Matrix<T>::SquareElements() const{
   Matrix Product((*this));
   return (*this).ElementWiseMultiplication(Product);
 }
 
 template <typename T>
-Matrix<T> Matrix<T>::ScalarMultiplication(T scalar) {
+Matrix<T> Matrix<T>::ScalarMultiplication(T scalar) const {
   Matrix Product((*this));
 
   for (size_t r = 0; r < Product.rows_; ++r) {
@@ -89,7 +89,7 @@ Matrix<T> Matrix<T>::ScalarMultiplication(T scalar) {
 }
 
 template <typename T>
-Matrix<T> Matrix<T>::MatrixAddition(const Matrix& other) {
+Matrix<T> Matrix<T>::MatrixAddition(const Matrix& other) const {
   assert(shape_ == other.shape_);
   Matrix Sum((*this));
   for (size_t r = 0; r < Sum.rows_; ++r) {

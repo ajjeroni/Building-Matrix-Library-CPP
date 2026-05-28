@@ -64,12 +64,13 @@ class Matrix {
     return data_[cols_ * row + col];
   }
 
-  Matrix operator+(const Matrix& target) {
+  Matrix operator+(const Matrix& target) const {
     return (*this).MatrixAddition(target);
   }
 
   // unary-arg matrix negation => matrix = -matrix
   Matrix operator-() const;
+  // Matrix operator-(const Matrix& target) const;
 
   /*------------------- Print Methods --------------------*/
   void PrintShape() const;
@@ -77,16 +78,16 @@ class Matrix {
 
   /*------------ Basic Linear Algebra Methods ------------*/
   // our first matrix multiplication method
-  Matrix MatrixMultiplication(const Matrix& other);
+  Matrix MatrixMultiplication(const Matrix& other) const;
 
   // Hadamard Product Method
   // no geometric interpretation, its what would one expect when multiplying
   // matrices at first
-  Matrix ElementWiseMultiplication(const Matrix& other);
-  Matrix SquareElements();
-  Matrix ScalarMultiplication(T scalar);
-  Matrix MatrixAddition(const Matrix& other);
-  Matrix MatrixSubtraction(const Matrix& other);
+  Matrix ElementWiseMultiplication(const Matrix& other) const;
+  Matrix SquareElements() const;
+  Matrix ScalarMultiplication(T scalar) const;
+  Matrix MatrixAddition(const Matrix& other) const;
+  // Matrix MatrixSubtraction(const Matrix& other) const;
 };
 
 #include "matrix.tpp"
